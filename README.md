@@ -1,3 +1,5 @@
+[![Code Quality](https://github.com/benoitchantre/deployer-extended-wordpress/actions/workflows/code-quality.yml/badge.svg)](https://github.com/benoitchantre/deployer-extended-wordpress/actions/workflows/code-quality.yml)
+
 # Deployer Extended WordPress
 
 A collection of Deployer tasks to use with WordPress sites.
