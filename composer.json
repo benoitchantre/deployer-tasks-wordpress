@@ -26,6 +26,9 @@
     "phpstan/phpstan": "^1.0",
     "squizlabs/php_codesniffer": "^3.6"
   },
+  "suggest": {
+    "wearerequired/wp-cli-clear-opcache": "Use WP-CLI to clear the OPcache for a site via HTTP."
+  },
   "config": {
     "vendor-dir": "vendor",
     "preferred-install": "dist",
