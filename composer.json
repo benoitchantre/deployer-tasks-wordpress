@@ -1,5 +1,5 @@
 {
-  "name": "benoitchantre/deployer-extended-wordpress",
+  "name": "benoitchantre/deployer-tasks-wordpress",
   "description": "A collection of Deployer tasks to use with WordPress sites.",
   "type": "library",
   "keywords": [
