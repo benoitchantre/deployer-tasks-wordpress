@@ -37,5 +37,12 @@
     "analyse": "vendor/bin/phpstan analyse",
     "phpcs": "vendor/bin/phpcs",
     "phpcbf": "vendor/bin/phpcbf"
+  },
+  "autoload": {
+    "files": [
+      "src/database.php",
+      "src/opcache.php",
+      "src/wp-rocket.php"
+    ]
   }
 }
