@@ -22,7 +22,7 @@ task('database:backup', function() {
             }
 
             // Export the database in the db-backups dir.
-            run('wp db export {{db_backups_path}}/$(date +"%F_%T").sql');
+            run('wp db export - | gzip > {{db_backups_path}}/$(date +"%F_%T").sql.gz');
         }
     );
 });
