@@ -2,12 +2,15 @@
 
 namespace Deployer;
 
+// Default configuration
+set('db_backups_path', '{{deploy_path}}/db-backups');
+set('keep_db_backups', 3);
+
 desc('Backup the remote database');
 task('database:backup', function() {
-    $db_backup_path = get('db_backups_path', '{{deploy_path}}/db-backups');
 
     // Create db-backups directory if it does not exist.
-    run("mkdir -p $db_backup_path"); // @phpstan-ignore-line
+    run('mkdir -p {{db_backups_path}}');
 
     within(
         '{{release_path}}',
@@ -26,15 +29,15 @@ task('database:backup', function() {
 
 desc('Purge old remote database backups');
 task('database:cleanup_backups', function() {
-    $db_backup_path = get('db_backups_path', '{{deploy_path}}/db-backups');
 
     // Create db-backups directory if it does not exist.
-    run("mkdir -p $db_backup_path"); // @phpstan-ignore-line
+    run('mkdir -p {{db_backups_path}}');
 
     within(
-        $db_backup_path, // @phpstan-ignore-line
+        '{{db_backups_path}}',
         function(): void {
-            $keep_db_backups = (int) get('keep_db_backups', 3) + 1; // @phpstan-ignore-line
+            $keep_db_backups = get('keep_db_backups', 3);
+            $keep_db_backups++;
             $get_file_to_delete = "ls -t | tail -n +$keep_db_backups";
 
             // Exit early when db-backups directory has not enough files.
