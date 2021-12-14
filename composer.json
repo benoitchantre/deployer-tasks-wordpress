@@ -27,7 +27,8 @@
     "squizlabs/php_codesniffer": "^3.6"
   },
   "suggest": {
-    "wearerequired/wp-cli-clear-opcache": "Use WP-CLI to clear the OPcache for a site via HTTP."
+    "wearerequired/wp-cli-clear-opcache": "Use WP-CLI to clear the OPcache for a site via HTTP.",
+    "wp-media/wp-rocket-cli": "Add a `wp rocket` command to support the WP Rocket plugin"
   },
   "config": {
     "vendor-dir": "vendor",
