@@ -8,10 +8,6 @@ set('keep_db_backups', 3);
 
 desc('Backup the remote database');
 task('database:backup', function() {
-
-    // Create db-backups directory if it does not exist.
-    run('mkdir -p {{db_backups_path}}');
-
     within(
         '{{release_path}}',
         function(): void {
@@ -20,6 +16,9 @@ task('database:backup', function() {
                 writeln('<comment>Aborted: WordPress is not yet installed.</comment>');
                 return;
             }
+
+            // Create db-backups directory if it does not exist.
+            run('mkdir -p {{db_backups_path}}');
 
             // Export the database in the db-backups dir.
             run('wp db export - | gzip > {{db_backups_path}}/$(date +"%F_%T").sql.gz');
