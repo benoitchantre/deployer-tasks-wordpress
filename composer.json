@@ -34,7 +34,10 @@
     "vendor-dir": "vendor",
     "preferred-install": "dist",
     "optimize-autoloader": true,
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   },
   "scripts": {
     "dep": "vendor/bin/dep",
