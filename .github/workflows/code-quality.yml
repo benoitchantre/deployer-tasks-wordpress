@@ -14,10 +14,6 @@ jobs:
     name: PHP Coding Standards
     runs-on: ubuntu-20.04
 
-    strategy:
-      matrix:
-        php-versions: ['8.0']
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -25,7 +21,6 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
           coverage: none
 
       - name: Validate composer.json and composer.lock
@@ -39,10 +34,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-${{ matrix.php-versions }}-composer-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-${{ matrix.php-versions }}-composer-${{ hashFiles('**/composer.lock') }}
-            ${{ runner.os }}-${{ matrix.php-versions }}-composer-
+            ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+            ${{ runner.os }}-composer-
 
       - name: Install dependencies
         run: composer install --no-interaction --no-ansi --no-progress
