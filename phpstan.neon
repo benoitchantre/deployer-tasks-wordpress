@@ -3,4 +3,6 @@ parameters:
     paths:
     	- src
     scanDirectories:
-        - vendor/deployer/deployer/src
+        - vendor/deployer/deployer/src/
+        - vendor/deployer/deployer/recipe/
+        - vendor/deployer/deployer/contrib/
