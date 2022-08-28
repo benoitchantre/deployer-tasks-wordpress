@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <ruleset name="Custom ruleset">
-	<description>Checks PHP version compatibility and PS12 Coding Standards.</description>
+    <description>Checks PHP version compatibility and PS12 Coding Standards.</description>
 
-	<!-- Only scan PHP files. -->
-	<arg name="extensions" value="php"/>
+    <!-- Only scan PHP files. -->
+    <arg name="extensions" value="php"/>
 
-	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
-	<arg name="cache"/>
+    <!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
+    <arg name="cache"/>
 
-	<!-- Strip the filepaths down to the relevant bit. -->
-	<arg name="basepath" value="./"/>
+    <!-- Strip the filepaths down to the relevant bit. -->
+    <arg name="basepath" value="./"/>
 
-	<!-- Strip the filepaths down to the relevant bit. -->
-	<arg name="basepath" value="./"/>
+    <!-- Strip the filepaths down to the relevant bit. -->
+    <arg name="basepath" value="./"/>
 
     <!-- Show sniff codes in all reports. -->
     <arg value="ps"/>
@@ -20,15 +20,15 @@
     <!-- Show results with colors -->
     <arg name="colors"/>
 
-	<!-- What to scan -->
-	<file>src/</file>
+    <!-- What to scan -->
+    <file>src/</file>
 
-	<!-- Rules: Check PHP version compatibility - see
-	https://github.com/PHPCompatibility/PHPCompatibility -->
-	<rule ref="PHPCompatibility"/>
-	<config name="testVersion" value="7.3-"/>
+    <!-- Rules: Check PHP version compatibility - see
+    https://github.com/PHPCompatibility/PHPCompatibility -->
+    <rule ref="PHPCompatibility"/>
+    <config name="testVersion" value="7.3-"/>
 
-	<!-- Rules: Check PS12 Coding Standards -->
+    <!-- Rules: Check PS12 Coding Standards -->
     <rule ref="PSR12">
         <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction"/>
     </rule>
