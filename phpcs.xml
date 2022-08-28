@@ -11,9 +11,6 @@
     <!-- Strip the filepaths down to the relevant bit. -->
     <arg name="basepath" value="./"/>
 
-    <!-- Strip the filepaths down to the relevant bit. -->
-    <arg name="basepath" value="./"/>
-
     <!-- Show sniff codes in all reports. -->
     <arg value="ps"/>
 
