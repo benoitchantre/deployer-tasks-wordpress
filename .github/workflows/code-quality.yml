@@ -2,10 +2,6 @@ name: Code Quality
 
 on: push
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   phpcs:
     name: PHP Coding Standards
