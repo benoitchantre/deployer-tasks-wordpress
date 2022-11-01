@@ -2,6 +2,8 @@
 
 namespace Deployer;
 
+require_once __DIR__ . '/common.php';
+
 desc('Clear OPcache');
 task('opcache:clear', function() {
     within(
@@ -14,12 +16,12 @@ task('opcache:clear', function() {
             }
 
             // Exit early when WP-CLI Clear OPcache is not installed.
-            if (! test('wp cli has-command opcache')) {
+            if (! test('{{bin/wp}} cli has-command opcache')) {
                 writeln('<comment>Aborted: WP-CLI Clear OPcache is not installed.</comment>');
                 return;
             }
 
-            run('wp opcache clear');
+            run('{{bin/wp}} opcache clear');
         }
     );
 });
