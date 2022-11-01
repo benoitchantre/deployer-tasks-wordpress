@@ -6,7 +6,7 @@ namespace Deployer;
 set('bin/wp', function () {
 
     // Backward compatibility for Deployer 6
-    if (function_exists('locateBinaryPath')) {
+    if (!function_exists('which')) {
         return locateBinaryPath('wp');
     }
 
