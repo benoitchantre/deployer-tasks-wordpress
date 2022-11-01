@@ -81,6 +81,7 @@ jobs:
         run: |
           if [ ${{ matrix.dependency-versions }} == 'lowest' ]; then
             composer update --prefer-lowest --no-interaction --no-ansi --no-progress
+            composer update phpstan/phpstan
           else
             composer install --no-interaction --no-ansi --no-progress
           fi
