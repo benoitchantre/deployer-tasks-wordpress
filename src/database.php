@@ -2,8 +2,6 @@
 
 namespace Deployer;
 
-require_once __DIR__ . '/common.php';
-
 // Default configuration
 set('db_backups_path', '{{deploy_path}}/db-backups');
 set('keep_db_backups', 3);
@@ -14,7 +12,7 @@ task('database:backup', function() {
         '{{release_path}}',
         function(): void {
             // Exit early when WordPress is not yet installed.
-            if (! test('{{bin/wp}} core is-installed')) {
+            if (! test('wp core is-installed')) {
                 writeln('<comment>Aborted: WordPress is not yet installed.</comment>');
                 return;
             }
@@ -23,7 +21,7 @@ task('database:backup', function() {
             run('mkdir -p {{db_backups_path}}');
 
             // Export the database in the db-backups dir.
-            run('{{bin/wp}} db export - | gzip > {{db_backups_path}}/$(date +"%F_%T").sql.gz');
+            run('wp db export - | gzip > {{db_backups_path}}/$(date +"%F_%T").sql.gz');
         }
     );
 });
@@ -59,12 +57,12 @@ task('database:update', function() {
         '{{release_path}}',
         function(): void {
             // Exit early when WordPress is not yet installed.
-            if (! test('{{bin/wp}} core is-installed')) {
+            if (! test('wp core is-installed')) {
                 writeln('<comment>Aborted: WordPress is not yet installed.</comment>');
                 return;
             }
 
-            run('{{bin/wp}} core update-db');
+            run('wp core update-db');
         }
     );
 });

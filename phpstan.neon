@@ -5,8 +5,3 @@ parameters:
     scanDirectories:
         - vendor/deployer/deployer/src/
         - vendor/deployer/deployer/recipe/
-    ignoreErrors:
-        -
-            message: '#Function which not found.#'
-            path: src/common.php
-            reportUnmatched: false
