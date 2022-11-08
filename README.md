@@ -24,3 +24,9 @@ Requirements for remote host : [WP-CLI](https://wp-cli.org/), [WP-CLI Clear OPca
 - `wprocket:cache:clear`: Clear WP Rocket cache
 
 Requirements for remote host : [WP-CLI](https://wp-cli.org/), [WP Rocket CLI](https://github.com/wp-media/wp-rocket-cli)
+
+## LiteSpeed tasks
+
+- `litespeed:cache:clear`: Clear LiteSpeed cache
+
+Requirements for remote host : [WP-CLI](https://wp-cli.org/), [LiteSpeed Cache](https://wordpress.org/plugins/litespeed-cache/)
