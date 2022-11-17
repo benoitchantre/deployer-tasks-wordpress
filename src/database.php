@@ -54,7 +54,7 @@ task('database:cleanup_backups', function() {
 desc('Run the WordPress database update procedure');
 task('database:update', function() {
     within(
-        '{{release_path}}',
+        '{{deploy_path}}/current',
         function(): void {
             // Exit early when WordPress is not yet installed.
             if (! test('wp core is-installed')) {

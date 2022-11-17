@@ -5,7 +5,7 @@ namespace Deployer;
 desc('Clear LiteSpeed cache');
 task('litespeed:cache:clear', function() {
     within(
-        '{{release_path}}',
+        '{{deploy_path}}/current',
         function() {
             // Exit early when LiteSpeed Cache is not installed.
             if (! test('wp plugin is-installed litespeed-cache')) {
