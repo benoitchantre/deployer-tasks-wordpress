@@ -12,5 +12,4 @@ updates:
       interval: "weekly"
     ignore:
       - dependency-name: "phpcompatibility/php-compatibility"
-        versions: "dev-develop"
     versioning-strategy: increase-if-necessary
