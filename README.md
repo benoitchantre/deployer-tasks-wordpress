@@ -15,6 +15,7 @@ Requirements for remote host : [WP-CLI](https://wp-cli.org/)
 ## OPcache tasks
 
 - `opcache:clear`: Reset OPcache
+- `opcache:invalidate_advanced_cache`: Invalidate wp-content/advanced-cache.php
 
 Requirements for remote host : [WP-CLI](https://wp-cli.org/), [WP-CLI Clear OPcache](https://github.com/wearerequired/wp-cli-clear-opcache)
 
