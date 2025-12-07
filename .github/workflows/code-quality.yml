@@ -5,7 +5,7 @@ on: push
 jobs:
   phpcs:
     name: PHP Coding Standards
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
@@ -40,7 +40,7 @@ jobs:
 
   phpstan:
     name: PHP Code Analysis
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     strategy:
       fail-fast: false
