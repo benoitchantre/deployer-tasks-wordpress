@@ -35,7 +35,7 @@ task('database:cleanup_backups', function() {
     within(
         '{{db_backups_path}}',
         function(): void {
-            $keep_db_backups = get('keep_db_backups', 3);
+            $keep_db_backups = is_int(get('keep_db_backups')) ? get('keep_db_backups') : 3 ;
             $keep_db_backups++;
             $get_file_to_delete = "ls -t | tail -n +$keep_db_backups";
 
