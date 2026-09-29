@@ -7,8 +7,8 @@ A collection of Deployer tasks to use with WordPress sites.
 ## Database tasks
 
 - `database:backup`: Backup the database
-- `database:cleanup_backup`: Purge old database backups
-- `database:upgrade`: Run the WordPress database update procedure
+- `database:cleanup_backups`: Purge old database backups
+- `database:update`: Run the WordPress database update procedure
 
 Requirements for remote host : [WP-CLI](https://wp-cli.org/)
 
