@@ -5,7 +5,7 @@ namespace Deployer;
 desc('Update advanced-cache.php with current paths');
 task('wprocket:config:update-advanced-cache', function() {
     within(
-        '{{release_path}}',
+        '{{release_or_current_path}}',
         function() {
             // Exit early when WP Rocket is not installed.
             if (! test('wp plugin is-installed wp-rocket')) {
@@ -33,7 +33,7 @@ task('wprocket:config:update-advanced-cache', function() {
 desc('Clear WP Rocket cache');
 task('wprocket:cache:clear', function() {
     within(
-        '{{release_path}}',
+        '{{release_or_current_path}}',
         function() {
             // Exit early when WP Rocket is not installed.
             if (! test('wp plugin is-installed wp-rocket')) {

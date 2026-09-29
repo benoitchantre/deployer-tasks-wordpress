@@ -5,7 +5,7 @@ namespace Deployer;
 desc('Clear OPcache');
 task('opcache:clear', function() {
     within(
-        '{{release_path}}',
+        '{{release_or_current_path}}',
         function(): void {
             // Exit early when `opcache` attribute is set to false for the host.
             if (! get('opcache', true)) {
@@ -27,7 +27,7 @@ task('opcache:clear', function() {
 desc('Invalidate advanced-cache.php');
 task('opcache:invalidate_advanced_cache', function() {
     within(
-        '{{release_path}}',
+        '{{release_or_current_path}}',
         function(): void {
             // Exit early when `opcache` attribute is set to false for the host.
             if (! get('opcache', true)) {
