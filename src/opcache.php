@@ -14,7 +14,7 @@ task('opcache:clear', function() {
             }
 
             // Exit early when WP-CLI Clear OPcache is not installed.
-            if (! test('wp cli has-command opcache')) {
+            if (! test('wp cli has-command opcache >/dev/null 2>&1')) {
                 writeln('<comment>Aborted: WP-CLI Clear OPcache is not installed.</comment>');
                 return;
             }
@@ -36,7 +36,7 @@ task('opcache:invalidate_advanced_cache', function() {
             }
 
             // Exit early when WP-CLI Clear OPcache is not installed.
-            if (! test('wp cli has-command opcache')) {
+            if (! test('wp cli has-command opcache >/dev/null 2>&1')) {
                 writeln('<comment>Aborted: WP-CLI Clear OPcache is not installed.</comment>');
                 return;
             }

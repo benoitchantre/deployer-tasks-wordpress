@@ -12,7 +12,7 @@ task('database:backup', function() {
         '{{release_path}}',
         function(): void {
             // Exit early when WordPress is not yet installed.
-            if (! test('wp core is-installed')) {
+            if (! test('wp core is-installed >/dev/null 2>&1')) {
                 writeln('<comment>Aborted: WordPress is not yet installed.</comment>');
                 return;
             }
@@ -57,7 +57,7 @@ task('database:update', function() {
         '{{deploy_path}}/current',
         function(): void {
             // Exit early when WordPress is not yet installed.
-            if (! test('wp core is-installed')) {
+            if (! test('wp core is-installed >/dev/null 2>&1')) {
                 writeln('<comment>Aborted: WordPress is not yet installed.</comment>');
                 return;
             }

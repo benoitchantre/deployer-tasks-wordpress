@@ -8,19 +8,19 @@ task('litespeed:cache:clear', function() {
         '{{deploy_path}}/current',
         function() {
             // Exit early when LiteSpeed Cache is not installed.
-            if (! test('wp plugin is-installed litespeed-cache')) {
+            if (! test('wp plugin is-installed litespeed-cache >/dev/null 2>&1')) {
                 writeln('<comment>Aborted: LiteSpeed Cache is not installed.</comment>');
                 return;
             }
 
             // Exit early when LiteSpeed Cache is not active.
-            if (! test('wp plugin is-active litespeed-cache')) {
+            if (! test('wp plugin is-active litespeed-cache >/dev/null 2>&1')) {
                 writeln('<comment>Aborted: LiteSpeed Cache is disabled.</comment>');
                 return;
             }
 
             // Exit early when LiteSpeed CLI is not installed.
-            if (! test('wp cli has-command litespeed-purge')) {
+            if (! test('wp cli has-command litespeed-purge >/dev/null 2>&1')) {
                 writeln('<error>Aborted: LiteSpeed Cache CLI is not installed.</error>');
                 return 1;
             }
